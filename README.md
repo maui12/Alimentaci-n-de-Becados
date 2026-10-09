@@ -11,6 +11,21 @@ en carpeta apps/
 **api** = backend, Nestjs
 
 
+## Requisitos
+
+* Node.js
+* pnpm
+
+```
+npm install -g pnpm
+```
+
+## Instalar dependencias
+* En la carpeta raíz del proyecto, cmd:
+```
+pnpm install
+```
+
 ## Ejecución local
 
 ### web
