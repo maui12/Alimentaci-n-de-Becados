@@ -1,0 +1,38 @@
+/* Fuente de Totoralillo2 */
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700&display=swap');
+
+:root {
+  /* Colores institucionales UCN */
+  --ucn-orange: #AC6D33;
+  --ucn-orange-light: #CAA987;
+  --ucn-orange-soft: rgba(172, 109, 51, 0.2);
+
+  --ucn-blue: #7E9BC0;
+
+  /* Colores neutros */
+  --color-white: #FFFFFF;
+  --color-black: #000000;
+  --color-text: #292629;
+  --color-background: #F8F8F8;
+  --color-surface: #FFFFFF;
+  --color-border: #E2E2E2;
+
+  /* Tipografía institucional */
+  --font-light: "Open Sans", sans-serif;
+  --font-semibold: "Open Sans", sans-serif;
+  --font-bold: "Open Sans", sans-serif;
+  --font-family: "Open Sans", sans-serif;
+
+  /* Tamaños y espaciado */
+  --radius-sm: 6px;
+  --radius-md: 12px;
+  --radius-lg: 20px;
+
+  --spacing-sm: 8px;
+  --spacing-md: 16px;
+  --spacing-lg: 24px;
+  --spacing-xl: 40px;
+
+  /* Sombras */
+  --shadow-card: 0 4px 16px rgba(0, 0, 0, 0.06);
+}
