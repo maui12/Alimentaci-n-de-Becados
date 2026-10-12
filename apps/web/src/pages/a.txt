@@ -1,0 +1,2 @@
+Separemos cada componente del dashboard en archivos separados para mejor organización
+y luego todo se ensambla en AdminDashboard

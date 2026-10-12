@@ -1,49 +1,56 @@
 import { useState } from 'react';
+import { NavLink } from 'react-router-dom';
+import logoUCN from '../../assets/logoUCN.png';
+import logoFAMED from '../../assets/logoFAMED.png';
 import './Sidebar.css';
 
-interface SidebarProps {
-  opciones?: string[];
-  onSelect?: (opcion: string) => void;
+export interface OpcionSidebar {
+  label: string;
+  ruta: string;
 }
 
-function Sidebar({ opciones = [], onSelect }: SidebarProps) {
+interface SidebarProps {
+  opciones?: OpcionSidebar[];
+}
+
+function Sidebar({ opciones = [] }: SidebarProps) {
   const [abierta, setAbierta] = useState(true);
 
   return (
     <div className="sidebar-container">
       <aside
-        className={`sidebar ${
-          abierta ? 'sidebar-abierta' : 'sidebar-cerrada'
-        }`}
+        className={`sidebar ${abierta ? 'sidebar-abierta' : 'sidebar-cerrada'}`}
       >
         <div className="sidebar-header">
           <div className="sidebar-logos">
             <div className="logo">
-                <img
-                    className="sidebar-logo"
-                    src="/src/assets/logoUCN.png"
-                    alt="Universidad Católica del Norte"
-                />
+              <img
+                className="sidebar-logo"
+                src={logoUCN}
+                alt="Universidad Católica del Norte"
+              />
             </div>
             <div className="logo">
-                <img
-                    className="sidebar-logo"
-                    src="/src/assets/logoFAMED.png"
-                    alt="Facultad de Medicina UCN"
-                />
+              <img
+                className="sidebar-logo"
+                src={logoFAMED}
+                alt="Facultad de Medicina UCN"
+              />
             </div>
           </div>
         </div>
 
         <nav className="sidebar-nav" aria-label="Menú principal">
           {opciones.map((opcion) => (
-            <button
-              key={opcion}
-              className="sidebar-option"
-              onClick={() => onSelect?.(opcion)}
+            <NavLink
+              key={opcion.ruta}
+              to={opcion.ruta}
+              className={({ isActive }) =>
+                `sidebar-option ${isActive ? 'sidebar-option-activa' : ''}`
+              }
             >
-              {opcion}
-            </button>
+              {opcion.label}
+            </NavLink>
           ))}
         </nav>
       </aside>

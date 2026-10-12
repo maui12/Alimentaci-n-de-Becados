@@ -1,0 +1,249 @@
+.cal {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+  padding: 1.5rem 2rem 2rem;
+}
+
+/* ---------- Encabezado ---------- */
+.cal-encabezado {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.cal-titulo {
+  margin: 0;
+  font-size: 1.9rem;
+  font-weight: 600;
+  letter-spacing: -0.02em;
+}
+
+.cal-subtitulo {
+  margin: 0.25rem 0 0;
+  max-width: 60ch;
+  color: var(--nt-texto-suave);
+}
+
+.cal-leyenda {
+  display: flex;
+  gap: 1rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  font-size: 0.85rem;
+  color: var(--nt-texto-suave);
+}
+
+.cal-leyenda li {
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+}
+
+.cal-punto {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+}
+
+.cal-punto--normal {
+  background: var(--nt-celeste);
+}
+
+.cal-punto--24h {
+  background: var(--nt-ambar);
+}
+
+/* ---------- Cuerpo ---------- */
+.cal-cuerpo {
+  display: grid;
+  grid-template-columns: minmax(0, 1.8fr) minmax(16rem, 1fr);
+  gap: 1rem;
+  align-items: start;
+}
+
+.cal-tarjeta {
+  padding: 1.25rem 1.5rem;
+  border: 1px solid var(--nt-borde);
+  border-radius: 16px;
+  background: var(--nt-tarjeta);
+}
+
+/* ---------- Navegación del mes ---------- */
+.cal-navegacion {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 1.25rem;
+}
+
+.cal-mes {
+  flex: 1;
+  margin: 0;
+  font-size: 1.25rem;
+  font-weight: 600;
+  text-align: center;
+}
+
+.cal-boton {
+  min-width: 2.2rem;
+  height: 2.2rem;
+  padding: 0 0.6rem;
+  border: 1px solid var(--nt-borde);
+  border-radius: 10px;
+  background: var(--nt-tarjeta);
+  color: var(--nt-texto);
+  font: inherit;
+  font-size: 1.1rem;
+  cursor: pointer;
+  transition: background 0.15s;
+}
+
+.cal-boton:hover {
+  background: var(--nt-tarjeta-hover);
+}
+
+.cal-boton--texto {
+  font-size: 0.9rem;
+}
+
+.cal-boton:focus-visible,
+.cal-dia:focus-visible {
+  outline: 2px solid var(--nt-celeste);
+  outline-offset: 2px;
+}
+
+/* ---------- Grilla ---------- */
+.cal-grilla {
+  display: grid;
+  grid-template-columns: repeat(7, minmax(0, 1fr));
+  gap: 0.5rem;
+}
+
+.cal-cabecera {
+  padding-bottom: 0.25rem;
+  text-align: center;
+  font-size: 0.8rem;
+  color: var(--nt-texto-suave);
+}
+
+.cal-cabecera--fin {
+  color: var(--nt-ambar);
+}
+
+.cal-dia {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 4.6rem;
+  padding: 0.55rem 0.65rem;
+  border: 1px solid var(--nt-borde);
+  border-radius: 10px;
+  background: var(--nt-tarjeta);
+  color: var(--nt-texto);
+  font: inherit;
+  text-align: left;
+  cursor: pointer;
+  transition: background 0.15s;
+}
+
+.cal-dia:hover {
+  background: var(--nt-tarjeta-hover);
+}
+
+.cal-dia-numero {
+  font-weight: 600;
+}
+
+.cal-dia-detalle {
+  font-size: 0.75rem;
+  color: var(--nt-texto-suave);
+}
+
+.cal-dia--24h {
+  background: var(--nt-ambar-fondo);
+  border-color: rgba(251, 191, 36, 0.45);
+}
+
+.cal-dia--24h .cal-dia-detalle {
+  color: var(--nt-ambar);
+}
+
+.cal-dia--hoy {
+  border-color: var(--nt-celeste);
+}
+
+.cal-dia--hoy .cal-dia-detalle {
+  color: var(--nt-celeste);
+  font-weight: 600;
+}
+
+.cal-dia--seleccionado {
+  background: var(--nt-celeste-fondo);
+  border-color: var(--nt-celeste);
+  box-shadow: 0 0 0 1px var(--nt-celeste);
+}
+
+/* ---------- Detalle del día ---------- */
+.cal-detalle-titulo {
+  margin: 0 0 0.5rem;
+  font-size: 1.15rem;
+  font-weight: 600;
+  text-transform: capitalize;
+}
+
+.cal-detalle-tipo {
+  display: inline-block;
+  margin: 0 0 0.75rem;
+  padding: 0.2rem 0.7rem;
+  border-radius: 999px;
+  background: var(--nt-celeste-fondo);
+  color: var(--nt-celeste);
+  font-size: 0.85rem;
+  font-weight: 500;
+}
+
+.cal-detalle-tipo--24h {
+  background: var(--nt-ambar-fondo);
+  color: var(--nt-ambar);
+}
+
+.cal-detalle-texto {
+  margin: 0 0 1rem;
+  color: var(--nt-texto);
+}
+
+.cal-detalle-vacio {
+  margin: 0;
+  color: var(--nt-texto-suave);
+  font-size: 0.9rem;
+}
+
+/* ---------- Responsive ---------- */
+@media (max-width: 1000px) {
+  .cal-cuerpo {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 600px) {
+  .cal {
+    padding: 1rem;
+  }
+
+  .cal-titulo {
+    font-size: 1.5rem;
+  }
+
+  .cal-grilla {
+    gap: 0.25rem;
+  }
+
+  .cal-dia {
+    min-height: 3.4rem;
+    padding: 0.35rem 0.4rem;
+  }
+}

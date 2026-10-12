@@ -1,0 +1,142 @@
+.config {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+  max-width: 56rem;
+  padding: 1.5rem 2rem 2rem;
+}
+
+.config-titulo {
+  margin: 0;
+  font-size: 1.9rem;
+  font-weight: 600;
+  letter-spacing: -0.02em;
+}
+
+.config-subtitulo {
+  margin: 0.25rem 0 0;
+  color: var(--nt-texto-suave);
+}
+
+.config-formulario {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+/* ---------- Grupos de campos ---------- */
+.config-tarjeta {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(14rem, 1fr));
+  gap: 1.25rem;
+  margin: 0;
+  padding: 1.25rem 1.5rem 1.5rem;
+  border: 1px solid var(--nt-borde);
+  border-radius: 16px;
+  background: var(--nt-tarjeta);
+}
+
+.config-leyenda {
+  padding: 0 0.5rem;
+  font-size: 1.1rem;
+  font-weight: 600;
+}
+
+.config-campo {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.config-campo label {
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+
+.config-campo input,
+.config-campo select {
+  padding: 0.55rem 0.75rem;
+  border: 1px solid var(--nt-borde);
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.05);
+  color: var(--nt-texto);
+  font: inherit;
+}
+
+.config-campo select option {
+  background: var(--nt-fondo-2);
+  color: var(--nt-texto);
+}
+
+.config-campo input:focus-visible,
+.config-campo select:focus-visible {
+  outline: 2px solid var(--nt-celeste);
+  outline-offset: 1px;
+}
+
+.config-campo small {
+  font-size: 0.8rem;
+  color: var(--nt-texto-suave);
+}
+
+/* ---------- Acciones ---------- */
+.config-acciones {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.config-boton {
+  padding: 0.6rem 1.2rem;
+  border: 1px solid var(--nt-borde);
+  border-radius: 10px;
+  background: var(--nt-tarjeta);
+  color: var(--nt-texto);
+  font: inherit;
+  cursor: pointer;
+  transition: background 0.15s;
+}
+
+.config-boton:hover {
+  background: var(--nt-tarjeta-hover);
+}
+
+.config-boton:focus-visible {
+  outline: 2px solid var(--nt-celeste);
+  outline-offset: 2px;
+}
+
+.config-boton--principal {
+  background: var(--nt-celeste);
+  border-color: var(--nt-celeste);
+  color: #06111f;
+  font-weight: 600;
+}
+
+.config-boton--principal:hover {
+  background: #7dd3fc;
+}
+
+.config-mensaje {
+  margin: 0;
+  font-size: 0.9rem;
+}
+
+.config-mensaje--error {
+  color: var(--nt-rojo);
+}
+
+.config-mensaje--ok {
+  color: var(--nt-verde);
+}
+
+@media (max-width: 600px) {
+  .config {
+    padding: 1rem;
+  }
+
+  .config-titulo {
+    font-size: 1.5rem;
+  }
+}

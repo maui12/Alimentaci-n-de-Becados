@@ -1,0 +1,372 @@
+.panel {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+  padding: 1.5rem 2rem 2rem;
+}
+
+/* ---------- Encabezado ---------- */
+.panel-encabezado {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.panel-titulo {
+  margin: 0;
+  font-size: 1.9rem;
+  font-weight: 600;
+  letter-spacing: -0.02em;
+}
+
+.panel-subtitulo {
+  margin: 0.25rem 0 0;
+  color: var(--nt-texto-suave);
+}
+
+.panel-periodos {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.panel-periodo {
+  padding: 0.45rem 1rem;
+  border: 1px solid var(--nt-borde);
+  border-radius: 999px;
+  background: var(--nt-tarjeta);
+  color: var(--nt-texto-suave);
+  font: inherit;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: background 0.15s, color 0.15s;
+}
+
+.panel-periodo:hover {
+  background: var(--nt-tarjeta-hover);
+  color: var(--nt-texto);
+}
+
+.panel-periodo--activo {
+  background: var(--nt-celeste-fondo);
+  border-color: var(--nt-celeste);
+  color: var(--nt-texto);
+}
+
+.panel-periodo:focus-visible,
+.mini-dia:focus-visible {
+  outline: 2px solid var(--nt-celeste);
+  outline-offset: 2px;
+}
+
+/* ---------- Tarjeta base ---------- */
+.panel-tarjeta {
+  padding: 1.25rem 1.5rem;
+  border: 1px solid var(--nt-borde);
+  border-radius: 16px;
+  background: var(--nt-tarjeta);
+}
+
+.panel-tarjeta-cabecera {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 0.75rem;
+  margin-bottom: 1.25rem;
+}
+
+.panel-tarjeta-titulo {
+  margin: 0;
+  font-size: 1.2rem;
+  font-weight: 600;
+}
+
+.panel-tarjeta-nota {
+  margin: 0.25rem 0 0;
+  font-size: 0.85rem;
+  color: var(--nt-texto-suave);
+}
+
+.panel-tarjeta-nota--derecha {
+  margin: 0;
+}
+
+/* ---------- KPIs ---------- */
+.panel-kpis {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1rem;
+}
+
+.panel-kpi {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+}
+
+.panel-kpi-etiqueta {
+  margin: 0;
+  font-size: 0.78rem;
+  font-weight: 500;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--nt-texto-suave);
+}
+
+.panel-kpi-valor {
+  margin: 0;
+  font-size: 2.3rem;
+  font-weight: 600;
+  line-height: 1.1;
+  font-variant-numeric: tabular-nums;
+}
+
+.panel-kpi-valor--alerta {
+  color: var(--nt-rojo);
+}
+
+.panel-kpi-detalle {
+  margin: 0;
+  font-size: 0.85rem;
+  color: var(--nt-texto-suave);
+}
+
+.panel-kpi-detalle--positivo {
+  color: var(--nt-verde);
+}
+
+/* ---------- Fila central ---------- */
+.panel-medio {
+  display: grid;
+  grid-template-columns: minmax(0, 1.55fr) minmax(0, 1fr);
+  gap: 1rem;
+}
+
+.panel-leyenda {
+  display: flex;
+  gap: 1rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  font-size: 0.8rem;
+  color: var(--nt-texto-suave);
+}
+
+.panel-leyenda li {
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+}
+
+.panel-punto {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+}
+
+.panel-punto--normal {
+  background: var(--nt-celeste);
+}
+
+.panel-punto--24h {
+  background: var(--nt-ambar);
+}
+
+/* ---------- Mini calendario ---------- */
+.mini-cal {
+  display: grid;
+  grid-template-columns: repeat(7, minmax(0, 1fr));
+  gap: 0.4rem;
+}
+
+.mini-cal-cabecera {
+  padding-bottom: 0.25rem;
+  text-align: center;
+  font-size: 0.78rem;
+  color: var(--nt-texto-suave);
+}
+
+.mini-cal-cabecera--fin {
+  color: var(--nt-ambar);
+}
+
+.mini-dia {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 3.6rem;
+  padding: 0.45rem 0.55rem;
+  border: 1px solid var(--nt-borde);
+  border-radius: 10px;
+  background: var(--nt-tarjeta);
+  color: var(--nt-texto);
+  font: inherit;
+  text-align: left;
+  cursor: pointer;
+  transition: background 0.15s;
+}
+
+.mini-dia:hover {
+  background: var(--nt-tarjeta-hover);
+}
+
+.mini-dia-numero {
+  font-weight: 600;
+}
+
+.mini-dia-detalle {
+  font-size: 0.72rem;
+  color: var(--nt-texto-suave);
+}
+
+.mini-dia--24h {
+  background: var(--nt-ambar-fondo);
+  border-color: rgba(251, 191, 36, 0.45);
+}
+
+.mini-dia--24h .mini-dia-detalle {
+  color: var(--nt-ambar);
+}
+
+.mini-dia--seleccionado {
+  background: var(--nt-celeste-fondo);
+  border-color: var(--nt-celeste);
+}
+
+.mini-dia--seleccionado .mini-dia-detalle {
+  color: var(--nt-celeste);
+}
+
+.mini-dia--hoy {
+  border-color: var(--nt-celeste);
+  box-shadow: 0 0 0 1px var(--nt-celeste);
+}
+
+.mini-dia--hoy .mini-dia-detalle {
+  color: var(--nt-celeste);
+  font-weight: 600;
+}
+
+.mini-dia-alerta {
+  position: absolute;
+  top: -5px;
+  right: -5px;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: var(--nt-rojo);
+}
+
+/* ---------- Comidas por especialidad ---------- */
+.panel-especialidades {
+  display: flex;
+  flex-direction: column;
+  gap: 0.9rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.panel-especialidad-fila {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 0.35rem;
+  font-size: 0.92rem;
+}
+
+.panel-barra {
+  height: 6px;
+  border-radius: 999px;
+  background: rgba(148, 163, 184, 0.15);
+  overflow: hidden;
+}
+
+.panel-barra-relleno {
+  height: 100%;
+  border-radius: 999px;
+}
+
+/* ---------- Tabla de contabilidad ---------- */
+.panel-tabla-contenedor {
+  overflow-x: auto;
+}
+
+.panel-tabla {
+  width: 100%;
+  border-collapse: collapse;
+  font-variant-numeric: tabular-nums;
+}
+
+.panel-tabla thead th {
+  padding: 0.6rem 0;
+  border-bottom: 1px solid var(--nt-borde);
+  font-size: 0.78rem;
+  font-weight: 500;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  text-align: left;
+  color: var(--nt-texto-suave);
+}
+
+.panel-tabla tbody th,
+.panel-tabla tbody td {
+  padding: 0.9rem 0;
+  border-bottom: 1px solid var(--nt-borde);
+  font-weight: 400;
+  text-align: left;
+}
+
+.panel-tabla tbody tr:last-child th,
+.panel-tabla tbody tr:last-child td {
+  border-bottom: none;
+}
+
+.panel-tabla .panel-tabla-num {
+  text-align: right;
+}
+
+.panel-tabla-suave {
+  color: var(--nt-texto-suave);
+}
+
+.panel-tabla-total {
+  font-weight: 600;
+}
+
+/* ---------- Responsive ---------- */
+@media (max-width: 1100px) {
+  .panel-kpis {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .panel-medio {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 600px) {
+  .panel {
+    padding: 1rem;
+  }
+
+  .panel-kpis {
+    grid-template-columns: 1fr;
+  }
+
+  .panel-titulo {
+    font-size: 1.5rem;
+  }
+
+  .mini-cal {
+    gap: 0.25rem;
+  }
+
+  .mini-dia {
+    min-height: 3rem;
+    padding: 0.3rem 0.4rem;
+  }
+}
