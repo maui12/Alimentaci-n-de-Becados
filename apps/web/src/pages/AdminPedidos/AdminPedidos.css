@@ -1,0 +1,300 @@
+
+.pedidos-page {
+  min-width: 0;
+  padding: 20px;
+  color: var(--color-text, #292629);
+  font-family: var(--font-family, "Open Sans", sans-serif);
+}
+
+.pedidos-summary {
+  margin-bottom: 20px;
+}
+
+.pedidos-eyebrow,
+.pedidos-caption {
+  color: #89877e;
+  font-family: monospace;
+  font-size: 10px;
+  letter-spacing: 1.5px;
+}
+
+.pedidos-total {
+  display: block;
+  margin: 3px 0;
+  font-size: 54px;
+  font-weight: 700;
+  line-height: 1;
+  letter-spacing: -3px;
+}
+
+.pedidos-caption {
+  margin: 8px 0 0;
+  letter-spacing: 0;
+}
+
+.pedidos-overview {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 238px;
+  gap: 18px;
+  align-items: start;
+  margin-bottom: 18px;
+}
+
+.pedidos-card {
+  min-width: 0;
+  border: 1px solid #e8e3d8;
+  border-radius: 7px;
+  background: #faf8f0;
+  box-shadow: 0 1px 4px rgb(42 37 25 / 3%);
+}
+
+.pedidos-card h2 {
+  margin: 0;
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.accounting-card {
+  padding-top: 14px;
+  overflow: hidden;
+}
+
+.accounting-card h2 {
+  padding: 0 12px 12px;
+}
+
+.pedidos-table-scroll {
+  width: 100%;
+  overflow-x: auto;
+}
+
+.pedidos-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 10px;
+  text-align: left;
+}
+
+.pedidos-table th {
+  padding: 10px 12px;
+  border-top: 1px solid #eee9df;
+  border-bottom: 1px solid #e9e4d9;
+  color: #89877e;
+  font-family: monospace;
+  font-size: 9px;
+  font-weight: 400;
+  letter-spacing: 0.7px;
+  text-transform: uppercase;
+}
+
+.pedidos-table td {
+  padding: 10px 12px;
+  border-bottom: 1px solid #eee9df;
+}
+
+.pedidos-table tbody tr:last-child td {
+  border-bottom: none;
+}
+
+.number-cell {
+  text-align: right !important;
+  white-space: nowrap;
+  font-variant-numeric: tabular-nums;
+}
+
+.strong-cell {
+  color: #302f2a;
+  font-weight: 700;
+}
+
+.accounting-total td {
+  border-top: 1px solid #dcd6c9;
+  font-weight: 700;
+}
+
+.pedidos-side {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.tracking-card,
+.manager-notice {
+  padding: 14px 12px;
+}
+
+.tracking-card h2,
+.manager-notice h2 {
+  margin-bottom: 14px;
+}
+
+.tracking-item + .tracking-item {
+  margin-top: 12px;
+}
+
+.tracking-label {
+  display: flex;
+  justify-content: space-between;
+  gap: 8px;
+  margin-bottom: 5px;
+  color: #89877e;
+  font-family: monospace;
+  font-size: 9px;
+}
+
+.tracking-label strong {
+  color: #302f2a;
+}
+
+.tracking-bar {
+  width: 100%;
+  height: 5px;
+  overflow: hidden;
+  border-radius: 10px;
+  background: #e9e4d9;
+}
+
+.tracking-progress {
+  display: block;
+  height: 100%;
+  border-radius: inherit;
+  transition: width 0.3s ease;
+}
+
+.delivered-progress {
+  background: #4bb79b;
+}
+
+.pending-progress {
+  background: #ed8a4d;
+}
+
+.manager-notice p {
+  margin: 0;
+  color: #89877e;
+  font-size: 10px;
+  line-height: 1.6;
+}
+
+.distribution-card {
+  overflow: hidden;
+}
+
+.distribution-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 12px;
+  border-bottom: 1px solid #e9e4d9;
+}
+
+.status-filter {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  color: #89877e;
+  font-size: 10px;
+}
+
+.status-filter select {
+  max-width: 140px;
+  padding: 5px 8px;
+  border: 1px solid #e3ded2;
+  border-radius: 5px;
+  background: #faf8f0;
+  color: var(--color-text, #292629);
+  font: inherit;
+}
+
+.distribution-table {
+  min-width: 650px;
+}
+
+.distribution-table th,
+.distribution-table td {
+  padding: 10px 12px;
+}
+
+.distribution-table tbody tr:hover {
+  background: #f5f0e5;
+}
+
+.distribution-table th:first-child,
+.distribution-table td:first-child {
+  width: 9%;
+}
+
+.distribution-table th:nth-child(2),
+.distribution-table td:nth-child(2) {
+  width: 24%;
+}
+
+.distribution-table th:nth-child(3),
+.distribution-table td:nth-child(3) {
+  width: 17%;
+}
+
+.distribution-table th:nth-child(4),
+.distribution-table td:nth-child(4) {
+  width: 29%;
+}
+
+.status-cell {
+  text-align: right !important;
+  white-space: nowrap;
+}
+
+.pedido-status {
+  font-size: 9px;
+}
+
+.status-delivered {
+  color: #43a98e;
+}
+
+.status-scheduled {
+  color: #e58a4e;
+}
+
+.pedidos-empty {
+  padding: 20px 12px;
+  color: #89877e;
+  font-size: 12px;
+}
+
+@media (max-width: 1000px) {
+  .pedidos-overview {
+    grid-template-columns: minmax(0, 1fr) 220px;
+  }
+}
+
+@media (max-width: 760px) {
+  .pedidos-page {
+    padding: 14px;
+  }
+
+  .pedidos-overview {
+    grid-template-columns: 1fr;
+  }
+
+  .pedidos-side {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 480px) {
+  .pedidos-side {
+    grid-template-columns: 1fr;
+  }
+
+  .pedidos-total {
+    font-size: 48px;
+  }
+
+  .distribution-header {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+}
