@@ -6,13 +6,13 @@
   --nt-fondo-2: #003057 ;
   --nt-tarjeta: rgba(255, 255, 255, 0.035);
   --nt-tarjeta-hover: rgba(255, 255, 255, 0.07);
-  --nt-borde: rgba(148, 163, 184, 0.2);
+  --nt-borde: #003057;
   --nt-texto: #e8eef8;
   --nt-texto-suave: #94a3b8;
 
   --nt-celeste: #38bdf8;
   --nt-verde: #1a942b;
-  --nt-violeta: #13c8ff;
+  --nt-violeta: #9c0ee9;
   --nt-ambar: #f3b006;
   --nt-rojo: #e41d3b;
 

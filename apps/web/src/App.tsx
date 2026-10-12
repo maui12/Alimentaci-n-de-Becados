@@ -4,6 +4,9 @@ import AdminDashboard from './Dashboard/AdminDashboard';
 import Panel from './pages/Panel/Panel.tsx';
 import Calendario from './pages/Calendario/Calendario.tsx';
 import Configuracion from './pages/Configuracion/Configuracion.tsx';
+import Becados from './pages/Becados/Becados';
+import Informes from './pages/Informes/Informes';
+import Pedidos from './pages/Pedidos/Pedidos';
 
 function App() {
   return (
@@ -13,7 +16,9 @@ function App() {
         <Route path="panel" element={<Panel />} />
         <Route path="calendario" element={<Calendario />} />
         <Route path="configuracion" element={<Configuracion />} />
-        {/* Becados, Pedidos, Informes: se agregan igual */}
+        <Route path="becados" element={<Becados />} />
+        <Route path="informes" element={<Informes />} />
+        <Route path="pedidos" element={<Pedidos />} />
       </Route>
       <Route path="*" element={<Navigate to="/admin" replace />} />
     </Routes>
