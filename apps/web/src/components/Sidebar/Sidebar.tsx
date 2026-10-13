@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { NavLink } from 'react-router-dom';
-import logoUCN from '../../assets/logoUCN.png';
-import logoFAMED from '../../assets/logoFAMED.png';
+import logoUCN from '../../../../shared/assets/logoUCN.png';
+import logoFAMED from '../../../../shared/assets/logoFAMED.png';
 import './Sidebar.css';
 
 export interface OpcionSidebar {
