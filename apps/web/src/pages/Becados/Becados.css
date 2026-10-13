@@ -1,5 +1,19 @@
-.becados {
+.becados-page {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+  min-width: 0;
   padding: 1.5rem 2rem 2rem;
+  color: var(--nt-texto);
+}
+
+/* ---------- Encabezado ---------- */
+.becados-encabezado {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 1rem;
 }
 
 .becados-titulo {
@@ -7,4 +21,251 @@
   font-size: 1.9rem;
   font-weight: 600;
   letter-spacing: -0.02em;
+}
+
+.becados-subtitulo {
+  margin: 0.25rem 0 0;
+  max-width: 60ch;
+  color: var(--nt-texto-suave);
+}
+
+.becados-leyenda {
+  display: flex;
+  gap: 1rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  font-size: 0.85rem;
+  color: var(--nt-texto-suave);
+}
+
+.becados-leyenda li {
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+}
+
+.becados-punto {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+}
+
+.becados-punto--normal {
+  background: var(--nt-celeste);
+}
+
+.becados-punto--exceso {
+  background: var(--nt-rojo, #f87171);
+}
+
+/* ---------- Layout ---------- */
+.becados-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1.8fr) minmax(16rem, 1fr);
+  gap: 1rem;
+  align-items: start;
+}
+
+.becados-table-card,
+.becado-profile {
+  min-width: 0;
+  padding: 1.25rem 1.5rem;
+  border: 1px solid var(--nt-borde);
+  border-radius: 16px;
+  background: var(--nt-tarjeta);
+}
+
+.becados-table-card h2,
+.becado-profile h2 {
+  margin: 0 0 1rem;
+  font-size: 1.15rem;
+  font-weight: 600;
+}
+
+/* ---------- Tabla ---------- */
+.table-scroll {
+  width: 100%;
+  overflow-x: auto;
+}
+
+.becados-table {
+  width: 100%;
+  border-collapse: collapse;
+  white-space: nowrap;
+  font-size: 0.9rem;
+}
+
+.becados-table th {
+  padding: 0.6rem 0.75rem;
+  color: var(--nt-texto-suave);
+  font-size: 0.8rem;
+  font-weight: 500;
+  text-align: left;
+}
+
+.becados-table td {
+  padding: 0.7rem 0.75rem;
+  border-top: 1px solid var(--nt-borde);
+}
+
+.becados-table tbody tr {
+  transition: background 0.15s;
+}
+
+.becados-table tbody tr:hover {
+  background: var(--nt-tarjeta-hover);
+}
+
+.becados-table .numeric {
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+}
+
+.becados-table .amount {
+  font-weight: 600;
+}
+
+.becados-table .selected-row {
+  background: var(--nt-celeste-fondo);
+  box-shadow: inset 3px 0 0 var(--nt-celeste);
+}
+
+.becados-table .exceeded-row {
+  background: rgba(248, 113, 113, 0.1);
+}
+
+.becados-table .exceeded-row:hover {
+  background: rgba(248, 113, 113, 0.16);
+}
+
+.becados-table .exceeded {
+  color: var(--nt-rojo, #f87171);
+  font-weight: 700;
+}
+
+.becado-name {
+  padding: 0;
+  border: 0;
+  background: transparent;
+  color: inherit;
+  font: inherit;
+  font-weight: 600;
+  text-align: left;
+  cursor: pointer;
+}
+
+.becado-name:hover {
+  color: var(--nt-celeste);
+}
+
+.becado-name:focus-visible {
+  outline: 2px solid var(--nt-celeste);
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+
+/* ---------- Panel lateral ---------- */
+.becados-details {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  min-width: 0;
+}
+
+.excess-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.excess-list:empty {
+  display: none;
+}
+
+.excess-card {
+  padding: 1rem 1.25rem;
+  border: 1px solid rgba(248, 113, 113, 0.45);
+  border-radius: 16px;
+  background: rgba(248, 113, 113, 0.1);
+}
+
+.excess-label {
+  display: inline-block;
+  padding: 0.15rem 0.6rem;
+  border-radius: 999px;
+  background: rgba(248, 113, 113, 0.18);
+  color: var(--nt-rojo, #f87171);
+  font-size: 0.75rem;
+  font-weight: 600;
+}
+
+.excess-card p {
+  margin: 0.6rem 0 0;
+  font-size: 0.9rem;
+  line-height: 1.5;
+}
+
+.becado-profile dl {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  margin: 0;
+}
+
+.becado-profile dl div {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 0.75rem;
+}
+
+.becado-profile dt {
+  color: var(--nt-texto-suave);
+  font-size: 0.85rem;
+}
+
+.becado-profile dd {
+  margin: 0;
+  font-size: 0.9rem;
+  font-weight: 600;
+  text-align: right;
+}
+
+.becado-profile p,
+.becados-status {
+  margin: 0;
+  color: var(--nt-texto-suave);
+  font-size: 0.9rem;
+}
+
+.becados-error {
+  margin: 0;
+  padding: 0.75rem 1rem;
+  border: 1px solid rgba(248, 113, 113, 0.45);
+  border-radius: 10px;
+  background: rgba(248, 113, 113, 0.1);
+  color: var(--nt-rojo, #f87171);
+}
+
+/* ---------- Responsive ---------- */
+@media (max-width: 1000px) {
+  .becados-layout {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 600px) {
+  .becados-page {
+    padding: 1rem;
+  }
+
+  .becados-titulo {
+    font-size: 1.5rem;
+  }
+
+  .becados-table-card,
+  .becado-profile {
+    padding: 1rem;
+  }
 }

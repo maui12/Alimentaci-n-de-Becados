@@ -1,5 +1,19 @@
-.pedidos {
+.pedidos-page {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+  min-width: 0;
   padding: 1.5rem 2rem 2rem;
+  color: var(--nt-texto);
+}
+
+/* ---------- Encabezado ---------- */
+.pedidos-encabezado {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 1rem;
 }
 
 .pedidos-titulo {
@@ -7,4 +21,284 @@
   font-size: 1.9rem;
   font-weight: 600;
   letter-spacing: -0.02em;
+}
+
+.pedidos-subtitulo {
+  margin: 0.25rem 0 0;
+  max-width: 60ch;
+  color: var(--nt-texto-suave);
+}
+
+.pedidos-leyenda {
+  display: flex;
+  gap: 1rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  font-size: 0.85rem;
+  color: var(--nt-texto-suave);
+}
+
+.pedidos-leyenda li {
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+}
+
+.pedidos-punto {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+}
+
+.pedidos-punto--repartido {
+  background: var(--nt-celeste);
+}
+
+.pedidos-punto--programado {
+  background: var(--nt-ambar);
+}
+
+/* ---------- Tarjetas ---------- */
+.pedidos-card {
+  min-width: 0;
+  padding: 1.25rem 1.5rem;
+  border: 1px solid var(--nt-borde);
+  border-radius: 16px;
+  background: var(--nt-tarjeta);
+}
+
+.pedidos-card h2 {
+  margin: 0 0 1rem;
+  font-size: 1.15rem;
+  font-weight: 600;
+}
+
+/* ---------- Layout superior ---------- */
+.pedidos-overview {
+  display: grid;
+  grid-template-columns: minmax(0, 1.8fr) minmax(16rem, 1fr);
+  gap: 1rem;
+  align-items: start;
+}
+
+.pedidos-side {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  min-width: 0;
+}
+
+/* ---------- Tablas ---------- */
+.pedidos-table-scroll {
+  width: 100%;
+  overflow-x: auto;
+}
+
+.pedidos-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.9rem;
+  text-align: left;
+}
+
+.pedidos-table th {
+  padding: 0.6rem 0.75rem;
+  color: var(--nt-texto-suave);
+  font-size: 0.8rem;
+  font-weight: 500;
+}
+
+.pedidos-table td {
+  padding: 0.7rem 0.75rem;
+  border-top: 1px solid var(--nt-borde);
+}
+
+.number-cell {
+  text-align: right !important;
+  white-space: nowrap;
+  font-variant-numeric: tabular-nums;
+}
+
+.strong-cell {
+  font-weight: 600;
+}
+
+.accounting-total td {
+  border-top: 2px solid var(--nt-borde);
+  font-weight: 700;
+}
+
+/* ---------- Seguimiento ---------- */
+.tracking-item + .tracking-item {
+  margin-top: 1rem;
+}
+
+.tracking-label {
+  display: flex;
+  justify-content: space-between;
+  gap: 0.5rem;
+  margin-bottom: 0.4rem;
+  color: var(--nt-texto-suave);
+  font-size: 0.85rem;
+}
+
+.tracking-label strong {
+  color: var(--nt-texto);
+}
+
+.tracking-bar {
+  width: 100%;
+  height: 8px;
+  overflow: hidden;
+  border-radius: 999px;
+  background: var(--nt-tarjeta-hover);
+}
+
+.tracking-progress {
+  display: block;
+  height: 100%;
+  border-radius: inherit;
+  transition: width 0.3s ease;
+}
+
+.delivered-progress {
+  background: var(--nt-celeste);
+}
+
+.pending-progress {
+  background: var(--nt-ambar);
+}
+
+.manager-notice p {
+  margin: 0;
+  color: var(--nt-texto-suave);
+  font-size: 0.9rem;
+  line-height: 1.6;
+}
+
+/* ---------- Lista de reparto ---------- */
+.distribution-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+  margin-bottom: 1rem;
+}
+
+.distribution-header h2 {
+  margin: 0;
+}
+
+.status-filter {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: var(--nt-texto-suave);
+  font-size: 0.85rem;
+}
+
+.status-filter select {
+  max-width: 10rem;
+  height: 2.2rem;
+  padding: 0 0.6rem;
+  border: 1px solid var(--nt-borde);
+  border-radius: 10px;
+  background: var(--nt-tarjeta);
+  color: var(--nt-texto);
+  font: inherit;
+  cursor: pointer;
+  transition: background 0.15s;
+}
+
+.status-filter select:hover {
+  background: var(--nt-tarjeta-hover);
+}
+
+.status-filter select:focus-visible {
+  outline: 2px solid var(--nt-celeste);
+  outline-offset: 2px;
+}
+
+.distribution-table {
+  min-width: 650px;
+}
+
+.distribution-table tbody tr {
+  transition: background 0.15s;
+}
+
+.distribution-table tbody tr:hover {
+  background: var(--nt-tarjeta-hover);
+}
+
+.status-cell {
+  text-align: right !important;
+  white-space: nowrap;
+}
+
+.pedido-status {
+  display: inline-block;
+  padding: 0.2rem 0.7rem;
+  border-radius: 999px;
+  font-size: 0.8rem;
+  font-weight: 500;
+}
+
+.status-delivered {
+  background: var(--nt-celeste-fondo);
+  color: var(--nt-celeste);
+}
+
+.status-scheduled {
+  background: var(--nt-ambar-fondo);
+  color: var(--nt-ambar);
+}
+
+/* ---------- Estados ---------- */
+.pedidos-empty,
+.pedidos-status {
+  margin: 0;
+  padding: 1rem 0.75rem 0;
+  color: var(--nt-texto-suave);
+  font-size: 0.9rem;
+}
+
+.pedidos-status {
+  padding: 0;
+}
+
+.pedidos-error {
+  margin: 0;
+  padding: 0.75rem 1rem;
+  border: 1px solid rgba(248, 113, 113, 0.45);
+  border-radius: 10px;
+  background: rgba(248, 113, 113, 0.1);
+  color: var(--nt-rojo, #f87171);
+}
+
+/* ---------- Responsive ---------- */
+@media (max-width: 1000px) {
+  .pedidos-overview {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 600px) {
+  .pedidos-page {
+    padding: 1rem;
+  }
+
+  .pedidos-titulo {
+    font-size: 1.5rem;
+  }
+
+  .pedidos-card {
+    padding: 1rem;
+  }
+
+  .distribution-header {
+    align-items: flex-start;
+    flex-direction: column;
+  }
 }
