@@ -24,12 +24,11 @@ export default function AppTabs() {
 
       <NativeTabs.Trigger name="calendario">
         <NativeTabs.Trigger.Label>Calendario</NativeTabs.Trigger.Label>
-        <NativeTabs.Trigger.Icon
-          >
+        <NativeTabs.Trigger.Icon>
             </NativeTabs.Trigger.Icon><CalendarioScreen />;
           src={require('@/assets/images/tabIcons/explore.png')}
           renderingMode="template"
-        /
+        />
       </NativeTabs.Trigger>
     </NativeTabs>
   );
