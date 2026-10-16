@@ -1,6 +1,6 @@
 import { Body, Controller, Delete, Get, HttpCode, Param, ParseIntPipe, Patch, Post, Query } from '@nestjs/common';
-import { MesQueryDto } from '../common/dto/mes-query.dto.js';
-import { Rol, Roles } from '../common/roles.js';
+import { MesQueryDto } from './../common/dto/mes-query.dto.js';
+import { Rol, Roles } from './../common/roles.js';
 import { CambiarEstadoDto, CrearPedidoDto, ListarPedidosQueryDto } from './dto/pedidos.dto.js';
 import { PedidosService } from './pedidos.service.js';
 

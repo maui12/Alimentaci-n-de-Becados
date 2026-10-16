@@ -1,5 +1,5 @@
 import { Column, CreateDateColumn, Entity, Index, JoinColumn, ManyToOne, PrimaryGeneratedColumn, Unique } from 'typeorm';
-import { Becado } from '../becados/becado.entity.js';
+import { Becado } from './../becados/becado.entity.js';
 
 export type TipoDia = 'normal' | '24h';
 

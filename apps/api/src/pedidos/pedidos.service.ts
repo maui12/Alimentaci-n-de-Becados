@@ -1,11 +1,11 @@
 import { Injectable, NotFoundException } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
 import { Repository } from 'typeorm';
-import { Becado } from '../becados/becado.entity.js';
-import { CAMPO_COSTO, TIPOS_COMIDA, type EstadoPedido, type TipoComida } from '../common/comidas.js';
-import type { MesQueryDto } from '../common/dto/mes-query.dto.js';
-import { rangoMes } from '../common/fechas.js';
-import { ConfiguracionService } from '../configuracion/configuracion.service.js';
+import { Becado } from './../becados/becado.entity.js';
+import { CAMPO_COSTO, TIPOS_COMIDA, type EstadoPedido, type TipoComida } from './../common/comidas.js';
+import type { MesQueryDto } from './../common/dto/mes-query.dto.js';
+import { rangoMes } from './../common/fechas.js';
+import { ConfiguracionService } from './../configuracion/configuracion.service.js';
 import type { CambiarEstadoDto, CrearPedidoDto, ListarPedidosQueryDto } from './dto/pedidos.dto.js';
 import { Pedido } from './pedido.entity.js';
 

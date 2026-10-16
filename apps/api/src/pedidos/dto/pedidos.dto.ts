@@ -1,7 +1,7 @@
 import { Type } from 'class-transformer';
 import { ArrayNotEmpty, IsArray, IsIn, IsInt, IsOptional, Min } from 'class-validator';
-import { ESTADOS_PEDIDO, TIPOS_COMIDA } from '../../common/comidas.js';
-import type { EstadoPedido, TipoComida } from '../../common/comidas.js';
+import { ESTADOS_PEDIDO, TIPOS_COMIDA } from './../../common/comidas.js';
+import type { EstadoPedido, TipoComida } from './../../common/comidas.js';
 import { MesQueryDto } from '../../common/dto/mes-query.dto.js';
 import { FechaISO } from '../../common/validators.js';
 

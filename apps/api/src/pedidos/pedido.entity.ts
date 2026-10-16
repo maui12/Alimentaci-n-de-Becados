@@ -1,6 +1,6 @@
 import { Column, CreateDateColumn, Entity, Index, JoinColumn, ManyToOne, PrimaryGeneratedColumn, Unique } from 'typeorm';
 import { Becado } from '../becados/becado.entity.js';
-import type { EstadoPedido, TipoComida } from '../common/comidas.js';
+import type { EstadoPedido, TipoComida } from './../common/comidas.js';
 
 /** Una fila = una comida de un becado en un día. */
 @Entity('pedidos')

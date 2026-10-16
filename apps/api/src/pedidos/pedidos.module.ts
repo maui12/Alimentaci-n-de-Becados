@@ -1,7 +1,7 @@
 import { Module } from '@nestjs/common';
 import { TypeOrmModule } from '@nestjs/typeorm';
-import { Becado } from '../becados/becado.entity.js';
-import { ConfiguracionModule } from '../configuracion/configuracion.module.js';
+import { Becado } from './../becados/becado.entity.js';
+import { ConfiguracionModule } from './../configuracion/configuracion.module.js';
 import { Pedido } from './pedido.entity.js';
 import { PedidosController } from './pedidos.controller.js';
 import { PedidosService } from './pedidos.service.js';

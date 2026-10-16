@@ -1,7 +1,7 @@
 import { Body, Controller, HttpCode, Post } from '@nestjs/common';
 import { Throttle } from '@nestjs/throttler';
 import { Public } from '../common/roles.js';
-import { AuthService } from './auth.service.js';
+import {AuthService} from './auth.service.js';
 import { LoginDto } from './dto/login.dto.js';
 
 @Controller('auth')
