@@ -1,14 +1,14 @@
 import { Module } from '@nestjs/common';
+import { TypeOrmModule } from '@nestjs/typeorm';
+import { Turno } from '../turnos/turno.entity.js';
 import { CalendarioController } from './calendario.controller.js';
 import { CalendarioService } from './calendario.service.js';
+import { Feriado } from './feriado.entity.js';
 
-/**
- * El módulo agrupa las piezas de una misma funcionalidad.
- * Luego se registra en AppModule (imports: [CalendarioModule]).
- */
 @Module({
+  imports: [TypeOrmModule.forFeature([Feriado, Turno])],
   controllers: [CalendarioController],
   providers: [CalendarioService],
-  exports: [CalendarioService], // para que otros módulos (ej. dashboard) puedan usarlo
+  exports: [CalendarioService],
 })
 export class CalendarioModule {}
