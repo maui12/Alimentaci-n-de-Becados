@@ -1,0 +1,14 @@
+services:
+  db:
+    image: postgres:16
+    restart: unless-stopped
+    environment:
+      POSTGRES_USER: becados
+      POSTGRES_PASSWORD: cambia_esta_clave   # debe coincidir con DB_PASSWORD de apps/api/.env
+      POSTGRES_DB: becados
+    ports:
+      - "5432:5432"
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+volumes:
+  pgdata:

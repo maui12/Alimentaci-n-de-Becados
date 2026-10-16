@@ -1,10 +1,49 @@
 import { Module } from '@nestjs/common';
-import { AppController } from './app.controller.js';
-import { AppService } from './app.service.js';
+import { ConfigModule, ConfigService } from '@nestjs/config';
+import { APP_GUARD } from '@nestjs/core';
+import { ThrottlerGuard, ThrottlerModule } from '@nestjs/throttler';
+import { TypeOrmModule } from '@nestjs/typeorm';
+import { AuthModule } from './auth/auth.module.js';
+import { BecadosModule } from './becados/becados.module.js';
+import { CalendarioModule } from './calendario/calendario.module.js';
+import { ConfiguracionModule } from './configuracion/configuracion.module.js';
+import { validarEnv } from './env.validation.js';
+import { HealthController } from './health/health.controller.js';
+import { HospitalesModule } from './hospitales/hospitales.module.js';
+import { InformesModule } from './informes/informes.module.js';
+import { PanelModule } from './panel/panel.module.js';
+import { PedidosModule } from './pedidos/pedidos.module.js';
+import { TurnosModule } from './turnos/turnos.module.js';
 
 @Module({
-  imports: [],
-  controllers: [AppController],
-  providers: [AppService],
+  imports: [
+    ConfigModule.forRoot({ isGlobal: true, validate: validarEnv }),
+    ThrottlerModule.forRoot([{ ttl: 60_000, limit: 100 }]),
+    TypeOrmModule.forRootAsync({
+      inject: [ConfigService],
+      useFactory: (c: ConfigService) => ({
+        type: 'postgres' as const,
+        host: c.getOrThrow<string>('DB_HOST'),
+        port: Number(c.getOrThrow('DB_PORT')),
+        username: c.getOrThrow<string>('DB_USER'),
+        password: c.getOrThrow<string>('DB_PASSWORD'),
+        database: c.getOrThrow<string>('DB_NAME'),
+        autoLoadEntities: true,
+        // Solo para desarrollo. En producción: migraciones y DB_SYNC=false.
+        synchronize: c.get<string>('DB_SYNC') === 'true',
+      }),
+    }),
+    AuthModule,
+    HospitalesModule,
+    ConfiguracionModule,
+    BecadosModule,
+    CalendarioModule,
+    TurnosModule,
+    PedidosModule,
+    PanelModule,
+    InformesModule,
+  ],
+  controllers: [HealthController],
+  providers: [{ provide: APP_GUARD, useClass: ThrottlerGuard }],
 })
 export class AppModule {}
