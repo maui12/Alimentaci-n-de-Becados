@@ -4,7 +4,7 @@ services:
     restart: unless-stopped
     environment:
       POSTGRES_USER: becados
-      POSTGRES_PASSWORD: cambia_esta_clave   # debe coincidir con DB_PASSWORD de apps/api/.env
+      POSTGRES_PASSWORD: becados
       POSTGRES_DB: becados
     ports:
       - "5432:5432"
